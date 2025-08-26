@@ -5,6 +5,9 @@ import numpy as np
 blackImg = np.zeros((500,500,3))
 cv.imshow("Blank", blackImg)
 
+#pt1 → Dikdörtgenin sol üst köşe koordinatı (x1, y1)
+
+#pt2 → Dikdörtgenin sağ alt köşe koordinatı (x2, y2)
 rectangle_1 = cv.rectangle(blackImg, (0,0),(250,270), (0,255,0), thickness=cv.FILLED) #ÜSTÜNE ÇİZİM YAPACAĞIN RESİM, SOL ÜST KÖŞE KOORDİNATLARI, SAĞ ALT KÖŞE KOORDİNATLARI, KALINLIK(FİLLED YAZARSAN İÇİNİ DOLDURUR)
 cv.imshow("Rectangle-1",rectangle_1)
 
