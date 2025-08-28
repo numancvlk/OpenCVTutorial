@@ -152,3 +152,141 @@ import numpy as np
 
 # if key == 27:
 #     cv.destroyAllWindows()
+
+#--------------------------------------------------------------------------
+
+# parkImage = cv.imread("Photos\park.jpg")
+# cv.imshow("Park",parkImage)
+
+# gray = cv.cvtColor(parkImage,cv.COLOR_BGR2GRAY) #RESMI SİYAH BEYAZ YAPTI
+# cv.imshow("GRAY",gray)
+
+# hsv = cv.cvtColor(parkImage,cv.COLOR_BGR2HSV)
+# cv.imshow("HSV", hsv)
+
+# hls = cv.cvtColor(parkImage,cv.COLOR_BGR2HLS)
+# cv.imshow("HLS",hls)
+
+# lab = cv.cvtColor(parkImage, cv.COLOR_BGR2LAB)
+# cv.imshow("LAB",lab)
+
+# luv = cv.cvtColor(parkImage,cv.COLOR_BGR2LUV)
+# cv.imshow("LUV",luv)
+
+# key = cv.waitKey(0)
+
+# if key == 27:
+#     cv.destroyAllWindows()
+
+#--------------------------------------------------------------------------
+
+# groupImage = cv.imread("Photos\group 1.jpg")
+# cv.imshow("Group",groupImage)
+
+# blur1 = cv.GaussianBlur(groupImage,(11,11),cv.BORDER_DEFAULT)
+# cv.imshow("BLUR - 1", blur1)
+
+# blurHorizontal = cv.GaussianBlur(groupImage,(19,1),cv.BORDER_DEFAULT)
+# cv.imshow("BLUR HORIZONTAL", blurHorizontal)
+
+# blurVertical = cv.GaussianBlur(groupImage,(1,19),cv.BORDER_DEFAULT)
+# cv.imshow("BLUR VERTICAL", blurVertical)
+
+# key = cv.waitKey(0)
+
+# if key == 27:
+#     cv.destroyAllWindows()
+
+#--------------------------------------------------------------------------
+
+# groupImage = cv.imread("Photos\group 2.jpg")
+# cv.imshow("Group",groupImage)
+
+# cannyLess = cv.Canny(groupImage,50,100)
+# cv.imshow("CANNY LESS THRESHOLD",cannyLess)
+
+# cannyMore = cv.Canny(groupImage,150,250)
+# cv.imshow("CANNY MORE THRESHOLD",cannyMore)
+
+# key = cv.waitKey(0)
+
+# if key == 27:
+#     cv.destroyAllWindows()
+
+#--------------------------------------------------------------------------
+
+# groupImage = cv.imread("Photos\group 1.jpg")
+# cv.imshow("Group", groupImage)
+
+# canny = cv.Canny(groupImage,50,100)
+# cv.imshow("CANNY", canny)
+
+# dilatedLess = cv.dilate(canny,np.ones((2,2)),iterations=1) ##KERNEL VERİRKEN np.ones() ile ver yoksa çalışmıyor.
+# cv.imshow("LESS DILATE",dilatedLess)
+
+# dilatedMore = cv.dilate(canny, np.ones((7,7)),iterations=1) ##KERNEL VERİRKEN np.ones() ile ver yoksa çalışmıyor.
+# cv.imshow("MORE DILATE", dilatedMore)
+
+# key = cv.waitKey(0)
+
+# if key == 27:
+#     cv.destroyAllWindows()
+
+#--------------------------------------------------------------------------
+
+# groupImage = cv.imread("Photos\group 1.jpg")
+# cv.imshow("Group",groupImage)
+
+# canny = cv.Canny(groupImage,200,300)
+# cv.imshow("Canny",groupImage)
+
+# dilated = cv.dilate(canny,np.ones((5,5)),iterations=1) ##KERNEL VERİRKEN np.ones() ile ver yoksa çalışmıyor.
+# cv.imshow("Dilated",dilated)
+
+# erodedLess = cv.erode(dilated,np.ones((2,2)),iterations=1) ##KERNEL VERİRKEN np.ones() ile ver yoksa çalışmıyor.
+# cv.imshow("ERODED LESS",erodedLess)
+
+# erodedMore = cv.erode(dilated,np.ones((8,8)),iterations=1)
+# cv.imshow("ERODED MORE",erodedMore)
+
+# key = cv.waitKey(0)
+
+# if key == 27:
+#     cv.destroyAllWindows()
+
+#--------------------------------------------------------------------------
+
+# def rescaleFrame(frame,scale= 0.75): #EN BOY ORANINI HER ZAMAN KORUR
+#     height = int(frame.shape[0] * scale)
+#     width = int(frame.shape[1] * scale)
+#     dimension = (width,height)
+#     return cv.resize(frame,dimension,cv.INTER_AREA)
+
+# parkImage = cv.imread("Photos\park.jpg")
+# cv.imshow("Park",parkImage)
+
+# parkImageRescale = rescaleFrame(parkImage,0.50)
+# cv.imshow("Rescale",parkImageRescale)
+
+# parkImageResize = cv.resize(parkImage,(300,200),cv.INTER_AREA) #BURDA DİREKT BİZ VERİYORUZ EN BOYU O YÜZDEN RESİM BOZULABİLİR.
+# cv.imshow("Resize", parkImageResize)
+
+# key = cv.waitKey(0)
+
+# if key == 27:
+#     cv.destroyAllWindows()
+
+#--------------------------------------------------------------------------
+
+# groupImage = cv.imread("Photos\group 1.jpg")
+# cv.imshow("Group",groupImage)
+
+# cropped = groupImage[180:350,270:400]
+# cv.imshow("Cropped",cropped)
+
+# key = cv.waitKey(0)
+
+# if key == 27:
+#     cv.destroyAllWindows()
+
+
