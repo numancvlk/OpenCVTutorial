@@ -289,4 +289,88 @@ import numpy as np
 # if key == 27:
 #     cv.destroyAllWindows()
 
+#--------------------------------------------------------------------------
 
+# def translate(img,x,y):
+#     transMat = np.float32([[1,0,x],[0,1,y]])
+#     dimensions = (img.shape[1],img.shape[0])
+#     return cv.warpAffine(img,transMat,dimensions)
+
+# ladyImage = cv.imread("Photos\lady.jpg")
+# cv.imshow("Lady",ladyImage)
+
+# translated1 = translate(ladyImage,100,100)
+# cv.imshow("TRANSLATED - 1", translated1)
+
+# translated2 = translate(ladyImage,-100,50)
+# cv.imshow("TRANSLATED - 2",translated2)
+
+# key = cv.waitKey(0)
+
+# if key == 27:
+#     cv.destroyAllWindows()
+
+#--------------------------------------------------------------------------
+
+# def rotate(img,angle,rotPoint= None):
+#     (width,height) = img.shape[:2]
+
+#     if rotPoint == None:
+#         rotPoint = (width//2,height//2)
+
+#     rotMat = cv.getRotationMatrix2D(rotPoint,angle,1.0)
+#     dimensions = (width,height)
+
+#     return cv.warpAffine(img,rotMat,dimensions)
+
+# ladyImage = cv.imread("Photos\lady.jpg")
+# cv.imshow("Lady",ladyImage)
+
+# rotated1 = rotate(ladyImage,45)
+# cv.imshow("ROTATED - 1",rotated1)
+
+# rotated2 = rotate(ladyImage,-45)
+# cv.imshow("ROTATED - 2",rotated2)
+
+# rotated3 = rotate(ladyImage,225)
+# cv.imshow("ROTATED - 3",rotated3)
+
+# rotated4 = rotate(ladyImage,-225)
+# cv.imshow("ROTATED - 4",rotated4)
+
+# key = cv.waitKey(0)
+
+# if key == 27:
+#     cv.destroyAllWindows()
+
+#--------------------------------------------------------------------------
+
+# ladyImage = cv.imread("Photos\lady.jpg")
+# cv.imshow("Lady",ladyImage)
+
+# resized = cv.resize(ladyImage,(1000,500),interpolation=cv.INTER_CUBIC)
+# cv.imshow("Resized",resized)
+
+# key = cv.waitKey(0)
+
+# if key == 27:
+#     cv.destroyAllWindows()
+
+#--------------------------------------------------------------------------
+
+# ladyImage = cv.imread("Photos\lady.jpg")
+# cv.imshow("Lady",ladyImage)
+
+# flippedVertical = cv.flip(ladyImage,0)
+# cv.imshow("VERTICAL", flippedVertical)
+
+# flippedHorizontal = cv.flip(ladyImage,1)
+# cv.imshow("HORIZONTAL",flippedHorizontal)
+
+# flippedVerticalAndHorizontal = cv.flip(ladyImage,-1)
+# cv.imshow("VERTICAL AND HORIZONTAL",flippedVerticalAndHorizontal)
+
+# key = cv.waitKey(0)
+
+# if key == 27:
+#     cv.destroyAllWindows()
