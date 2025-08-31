@@ -29,7 +29,7 @@ cv.imshow("Median Blur", medianBlur)
 # - Hem uzamsal yakınlığa (komşuluk) hem de renk benzerliğine bakar
 # - Bu sayede kenarları korur, sadece benzer renk bölgelerini bulanıklaştırır
 # - Parametreler:
-#   10  → d (komşuluk çapı)
+#   20  → d (komşuluk çapı)
 #   35  → sigmaColor (renk farkı eşiği, büyük olursa daha fazla renk bulanıklaşır)
 #   25  → sigmaSpace (uzamsal mesafe, büyük olursa uzak pikseller de dikkate alınır)
 bilateralBlur = cv.bilateralFilter(cats,20,35,25)

@@ -374,3 +374,75 @@ import numpy as np
 
 # if key == 27:
 #     cv.destroyAllWindows()
+
+#--------------------------------------------------------------------------
+
+# groupImage = cv.imread("Photos\group 1.jpg")
+# cv.imshow("Group Image", groupImage)
+
+# blank = np.zeros((groupImage.shape[:2]),dtype="uint8")
+
+# grayGroup = cv.cvtColor(groupImage,cv.COLOR_BGR2GRAY)
+
+# canny = cv.Canny(grayGroup,50,100)
+# ret,thresh = cv.threshold(grayGroup,50,100,cv.THRESH_BINARY)
+
+# contour1, hierarchy = cv.findContours(canny,cv.RETR_EXTERNAL,cv.CHAIN_APPROX_SIMPLE)
+
+# cv.drawContours(blank,contour1,-1,255,thickness=3)
+# cv.imshow("Contour - 1",blank)
+
+
+# key = cv.waitKey(0)
+
+# if key == 27:
+#     cv.destroyAllWindows()
+
+#--------------------------------------------------------------------------
+
+# groupImage = cv.imread("Photos\group 1.jpg")
+# cv.imshow("Group",groupImage)
+
+# blank = np.zeros((groupImage.shape[:2]),dtype="uint8")
+
+# blue,green,red = cv.split(groupImage)
+# cv.imshow("Blue",blue)
+# cv.imshow("Green",green)
+# cv.imshow("Red",red)
+
+# merged = cv.merge((blue,green,red))
+# cv.imshow("Merged",merged)
+
+# coloredBlue = cv.merge((blue,blank,blank))
+# cv.imshow("Colored Blue",coloredBlue)
+# coloredGreen = cv.merge((blank,green,blank))
+# cv.imshow("Colored Green",coloredGreen)
+# coloredRed = cv.merge((blank,blank,red))
+# cv.imshow("Colored Red",coloredRed)
+
+# key = cv.waitKey(0)
+
+# if key == 27:
+#     cv.destroyAllWindows()
+
+#--------------------------------------------------------------------------
+
+# groupImage = cv.imread("Photos\group 1.jpg")
+# cv.imshow("Group",groupImage)
+
+# blur = cv.blur(groupImage,(7,7))
+# cv.imshow("Blur",blur)
+
+# gaussian = cv.GaussianBlur(groupImage,(7,7),cv.BORDER_DEFAULT)
+# cv.imshow("Gaussian",gaussian)
+
+# median = cv.medianBlur(groupImage,7)
+# cv.imshow("Median",median)
+
+# bilateral = cv.bilateralFilter(groupImage,20,35,50)
+# cv.imshow("Bilateral",bilateral)
+
+# key = cv.waitKey(0)
+
+# if key == 27:
+#     cv.destroyAllWindows()
