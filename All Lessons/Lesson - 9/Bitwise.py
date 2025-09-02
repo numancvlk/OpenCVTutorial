@@ -18,7 +18,7 @@ cv.imshow("Bitwise AND",bitwise_AND)
 bitwise_OR = cv.bitwise_or(rectangle,circle)
 cv.imshow("Bitwise OR",bitwise_OR)
 
-#BITWISE XOR = YANLIZCA KESİŞMEYEN PİKSELLERİ ALIR
+#BITWISE XOR = YALNIZCA KESİŞMEYEN PİKSELLERİ ALIR
 bitwise_XOR = cv.bitwise_xor(rectangle,circle)
 cv.imshow("Bitwise XOR",bitwise_XOR)
 

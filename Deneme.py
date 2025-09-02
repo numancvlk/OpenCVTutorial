@@ -1,5 +1,6 @@
 import cv2 as cv
 import numpy as np
+import matplotlib.pyplot as plt
 
 #RESMİ BOYUTLANDIRMA
 # def rescaleFrame(frame,scale= 0.75):
@@ -441,6 +442,185 @@ import numpy as np
 
 # bilateral = cv.bilateralFilter(groupImage,20,35,50)
 # cv.imshow("Bilateral",bilateral)
+
+# key = cv.waitKey(0)
+
+# if key == 27:
+#     cv.destroyAllWindows()
+
+#--------------------------------------------------------------------------
+
+# blank = np.zeros((500,500),dtype="uint8")
+
+# circle = cv.circle(blank.copy(),(blank.shape[1]//2, blank.shape[0]//2),220,255,thickness=-1)
+# cv.imshow("Circle",circle)
+
+# rectangle = cv.rectangle(blank.copy(),((blank.shape[1]//2)-200, (blank.shape[0]//2)-200),((blank.shape[0]//2)+200, (blank.shape[1]//2)+200),255,thickness=-1)
+# cv.imshow("Rectangle",rectangle)
+
+# bitwiseAnd = cv.bitwise_and(rectangle,circle)
+# cv.imshow("Bitwise And",bitwiseAnd)
+
+# bitwiseOr = cv.bitwise_or(rectangle,circle)
+# cv.imshow("Bitwise Or",bitwiseOr)
+
+# bitwiseXor = cv.bitwise_xor(rectangle,circle)
+# cv.imshow("Bitwise Xor",bitwiseXor)
+
+# bitwiseNot = cv.bitwise_not(circle)
+# cv.imshow("Bitwise Not",bitwiseNot)
+
+# key = cv.waitKey(0)
+
+# if key == 27:
+#     cv.destroyAllWindows()
+
+#--------------------------------------------------------------------------
+
+# img = cv.imread("Photos\group 1.jpg")
+# cv.imshow("Group",img)
+
+# blank = np.zeros((img.shape[:2]),dtype="uint8")
+
+# rectangleMask = cv.rectangle(blank.copy(),((blank.shape[1]//2) + 100 ,(blank.shape[0]//2)+100),((blank.shape[1]//2)-100, (blank.shape[0]//2) - 100),255,thickness=-1 )
+# cv.imshow("Rectangle Mask",rectangleMask)
+
+# circleMask = cv.circle(blank.copy(),((blank.shape[1]//2)-100, (blank.shape[0]//2)),120,255,thickness=-1)
+# cv.imshow("Circle Mask",circleMask)
+
+# maskedGroup = cv.bitwise_or(img,img,mask=rectangleMask)
+# cv.imshow("MASKED GROUP - 1",maskedGroup)
+
+# maskedGroup2 = cv.bitwise_or(img,img,mask=circleMask)
+# cv.imshow("Circle Mask",maskedGroup2)
+
+# key = cv.waitKey(0)
+
+# if key == 27:
+#     cv.destroyAllWindows()
+
+#--------------------------------------------------------------------------
+
+# img = cv.imread("Photos\group 2.jpg")
+# cv.imshow("Group",img)
+
+# blank = np.zeros((img.shape[:2]),dtype="uint8")
+
+# grayImg = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+# cv.imshow("GRAY",grayImg)
+
+# circleMask = cv.circle(blank.copy(),(blank.shape[1]//2,blank.shape[0]//2),120,255,thickness=-1)
+# cv.imshow("Circle Mask",circleMask)
+
+# nonMaskedHist = cv.calcHist([grayImg],[0],None,[256],[0,256])
+# maskedHist = cv.calcHist([grayImg],[0],circleMask,[256],[0,256])
+
+# plt.figure()
+# plt.title("Non Masked Histogram")
+# plt.xlabel("Bins")
+# plt.ylabel("# of Pixels")
+# plt.xlim((0,256))
+# plt.plot(nonMaskedHist)
+
+# plt.figure()
+# plt.title("Masked Histogram")
+# plt.xlabel("Bins")
+# plt.ylabel("# of Pixels")
+# plt.xlim((0,256))
+# plt.plot(maskedHist)
+# plt.show()
+
+# key = cv.waitKey(0)
+
+# if key == 27:
+#     cv.destroyAllWindows()
+
+#--------------------------------------------------------------------------
+
+# img = cv.imread("Photos\cats.jpg")
+# cv.imshow("Cats",img)
+# color = ("b","g","r")
+
+# blank = np.zeros((img.shape[:2]),dtype="uint8")
+
+# circle = cv.circle(blank.copy(),(img.shape[1]//2,img.shape[0]//2),200,255,thickness=-1)
+
+# plt.figure()
+# plt.title("NonMasked Histogram")
+# plt.xlabel("Bins")
+# plt.ylabel("# of Shapes")
+
+# for i, col in enumerate(color):
+#     normalHist = cv.calcHist([img],[i],None,[256],[0,256])
+#     plt.plot(normalHist,color = col)
+#     plt.xlim((0,256))
+
+
+
+# plt.figure()
+# plt.title("Masked Histogram")
+# plt.xlabel("Bins")
+# plt.ylabel("# of Shapes")
+
+# for i, col in enumerate(color):
+#     maskedHist = cv.calcHist([img],[i],circle,[256],[0,256])
+#     plt.plot(maskedHist, color= col)
+#     plt.xlim((0,256))
+
+# plt.show()
+
+
+# key = cv.waitKey(0)
+
+# if key == 27:
+#     cv.destroyAllWindows()
+
+#--------------------------------------------------------------------------
+
+# img = cv.imread("Photos\group 1.jpg")
+# cv.imshow("Group",img)
+
+# gray = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+
+# threshold1,thresh = cv.threshold(gray,125,255,cv.THRESH_BINARY)
+# cv.imshow("Simple Thresh",thresh)
+# print(threshold1)
+
+# threshold2, thresh = cv.threshold(gray,125,255,cv.THRESH_BINARY_INV)
+# cv.imshow("Inv Thresh",thresh)
+# print(threshold2)
+
+# adaptiveThreshold = cv.adaptiveThreshold(gray,255,cv.ADAPTIVE_THRESH_MEAN_C,cv.THRESH_BINARY,11,5)
+# cv.imshow("Adaptive Thresh",adaptiveThreshold)
+
+# adaptiveThresholdInv = cv.adaptiveThreshold(gray,255,cv.ADAPTIVE_THRESH_MEAN_C,cv.THRESH_BINARY_INV,11,5)
+# cv.imshow("INV ADAPTIVE",adaptiveThresholdInv)
+
+# key = cv.waitKey(0)
+
+# if key == 27:
+#     cv.destroyAllWindows()
+
+#--------------------------------------------------------------------------
+
+# park = cv.imread("Photos\park.jpg")
+# cv.imshow("Park",park)
+
+# grayPark = cv.cvtColor(park, cv.COLOR_BGR2GRAY)
+
+# lap = cv.Laplacian(grayPark,cv.CV_64F)
+# lap = np.uint8(np.absolute(lap))
+# cv.imshow("Laplacian",lap)
+
+# xSobel = cv.Sobel(grayPark,cv.CV_64F,1,0)
+# ySobel = cv.Sobel(grayPark,cv.CV_64F,0,1)
+# combinedSobel = cv.bitwise_or(xSobel,ySobel)
+
+
+# cv.imshow("X Sobel",xSobel)
+# cv.imshow("Y Sobel",ySobel)
+# cv.imshow("Combined Sobel", combinedSobel)
+
 
 # key = cv.waitKey(0)
 
