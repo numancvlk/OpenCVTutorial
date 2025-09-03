@@ -1,4 +1,4 @@
-#FACE DETECT
+#FACE DETECT AMA HAZIR MODELLER İLE
 import cv2 as cv
 
 img = cv.imread("Photos\lady.jpg")
@@ -7,7 +7,7 @@ cv.imshow("Person",img)
 grayPerson = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
 cv.imshow("Gray Person",grayPerson)
 
-# Haar cascade, OpenCV'nin önceden eğitilmiş bir yüz tespit modelidir. XML dosyası bu modelin parametrelerini içerir.
+# Haar cascade, OpenCV'nin önceden eğitilmiş bir yüz tespit modelidir. XML dosyası bu modelin parametrelerini içerir. SADECE GRI RENKLE IYI SONUCLAR VERIR
 haarCascade = cv.CascadeClassifier("haarFace.xml") #XML DOSYASINI OKU VE DEĞİŞKENE AT
 
 # detectMultiScale() fonksiyonu resmi farklı boyutlarda tarayarak yüzleri arar.
